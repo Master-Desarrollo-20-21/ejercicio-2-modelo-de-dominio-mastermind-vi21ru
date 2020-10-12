@@ -1,0 +1,50 @@
+@startuml "MASTERMIND"
+class Mastermind
+class Board
+class Player
+class CodeBreaker
+class CodeMaker
+class Turn
+class Token
+class ResultOk
+class Position
+class SecretCode
+class Color
+class Red
+class Yellow
+class White
+class Black
+class Blue
+class Pink
+class Green
+class Attemp
+class Match
+class RightMatch
+class WrongMatch
+
+
+Board *-- Mastermind : 1
+Board *-- Turn : 1
+Mastermind *-- Player : 2
+Turn o-- Player
+Player <|-- CodeBreaker
+Player <|-- CodeMaker
+CodeMaker --> SecretCode
+ResultOk ..> SecretCode
+Token *-- Color
+Token *-- Position
+SecretCode *-- Token : 0..5
+Color <|-- Red
+Color <|-- Yellow
+Color <|-- White
+Color <|-- Black
+Color <|-- Blue
+Color <|-- Pink
+Color <|-- Green
+CodeBreaker o-- Attemp : 12
+Attemp *-- Match : 0..5
+Match <|-- RightMatch
+Match <|-- WrongMatch
+Match o-- ResultOk
+CodeMaker ..> Attemp
+@enduml
