@@ -1,0 +1,21 @@
+@startuml
+title Mastermind - Diagrama de estados
+state Init as " "
+state Code as " "
+state Attemps as " "
+state Succed as " "
+state Failed as " "
+state End as " "
+
+
+[*] --> Init: initializeGame
+Init --> Code : CodeMakerCodeGenerated
+Code --> Attemps : CodeBreakerMakeAttemp
+Attemps --> Succed : AttempSuccedded
+Attemps --> Failed : AttempFailed
+Failed --> Attemps : newAttemp
+Failed --> End : allAttempsWasted
+Succed --> End : EndGame
+
+End --> [*] : getWinner
+@enduml

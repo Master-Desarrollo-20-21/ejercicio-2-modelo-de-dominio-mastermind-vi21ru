@@ -1,4 +1,7 @@
-@startuml "MASTERMIND"
+@startuml
+title Mastermind - Diagrama de clases
+
+
 class Mastermind
 class Board
 class Player
